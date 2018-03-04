@@ -1,0 +1,40 @@
+.header {
+    margin-top: 85px;
+    margin-bottom: 40px;
+}
+
+.header-title {
+    float: left;
+}
+
+.title {
+    height: 50px;
+    font-size: 42px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.sub-title {
+    height: 12px;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #dddddd;
+}
+
+.link-group {
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    list-style: none;
+}
+
+.link-item {
+    float: left;
+    margin-right: 30px;
+}
+
+.link-item:last-child {
+    margin-right: 0;
+}
