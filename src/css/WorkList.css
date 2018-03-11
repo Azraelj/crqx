@@ -8,6 +8,7 @@
     width: 30%;
     margin-right: 5%;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .work-item:nth-child(3n) {
@@ -40,4 +41,49 @@
     text-align: center;
     font-size: 14px;
     line-height: 22px;
+}
+
+.pics {
+    float: left;
+    width: 900px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.pic {
+    width: 100%;
+}
+
+.pic:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.text {
+    float: left;
+    width: 250px;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.content {
+    font-size: 15px;
+    line-height: 27px;
+}
+
+.button-group {
+    line-height: 27px;
+    font-size: 15px;
+}
+
+.change {
+    float: right;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
 }

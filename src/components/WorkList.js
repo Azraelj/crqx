@@ -9,25 +9,41 @@ class WorkList extends Component {
                 id: 1,
                 name: 'work1',
                 img: 'https://static1.squarespace.com/static/5a9b936f36099bb6a695f4f1/t/5a9b93df9140b7602d8bb7d8/1456778711357/65.jpg',
-                info: {}
+                info: {
+                    title: 'work1',
+                    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, amet at autem doloremque et, facere illo laudantium, maxime sit tempora vero vitae voluptas? Autem, facilis libero ratione reprehenderit sunt vitae!',
+                    pics: ['https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4b1ed859fd0a688519c03/56d4b2ad45bf21a630f1f0aa/1456780038991/?format=1000w','https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4b1ed859fd0a688519c03/56d4b2ad45bf21a630f1f0aa/1456780038991/?format=1000w','https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4b1ed859fd0a688519c03/56d4b2ad45bf21a630f1f0aa/1456780038991/?format=1000w']
+                }
             },
             {
                 id: 2,
                 name: 'work2',
                 img: 'https://static1.squarespace.com/static/5a9b936f36099bb6a695f4f1/t/5a9b93df9140b7602d8bb7d8/1456778711357/65.jpg',
-                info: {}
+                info: {
+                    title: 'work2',
+                    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, amet at autem doloremque et, facere illo laudantium, maxime sit tempora vero vitae voluptas? Autem, facilis libero ratione reprehenderit sunt vitae!',
+                    pics: ['https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4a6fbf699bba7a12bd0fe/56d4a73b20c6470d703c3948/1456777033566/?format=1000w','https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4a6fbf699bba7a12bd0fe/56d4a73b20c6470d703c3948/1456777033566/?format=1000w','https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4a6fbf699bba7a12bd0fe/56d4a73b20c6470d703c3948/1456777033566/?format=1000w']
+                }
             },
             {
                 id: 3,
                 name: 'work3',
                 img: 'https://static1.squarespace.com/static/5a9b936f36099bb6a695f4f1/t/5a9b93df9140b7602d8bb7d8/1456778711357/65.jpg',
-                info: {}
+                info: {
+                    title: 'work3',
+                    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, amet at autem doloremque et, facere illo laudantium, maxime sit tempora vero vitae voluptas? Autem, facilis libero ratione reprehenderit sunt vitae!',
+                    pics: ['https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4a6fbf699bba7a12bd0fe/56d4a7bb746fb9758d44c27e/1456777159794/?format=1000w','https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4a6fbf699bba7a12bd0fe/56d4a7bb746fb9758d44c27e/1456777159794/?format=1000w','https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4a6fbf699bba7a12bd0fe/56d4a7bb746fb9758d44c27e/1456777159794/?format=1000w']
+                }
             },
             {
                 id: 4,
                 name: 'work4',
                 img: 'https://static1.squarespace.com/static/5a9b936f36099bb6a695f4f1/t/5a9b93df9140b7602d8bb7d8/1456778711357/65.jpg',
-                info: {}
+                info: {
+                    title: 'work4',
+                    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, amet at autem doloremque et, facere illo laudantium, maxime sit tempora vero vitae voluptas? Autem, facilis libero ratione reprehenderit sunt vitae!Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, amet at autem doloremque et, facere illo laudantium, maxime sit tempora vero vitae voluptas? Autem, facilis libero ratione reprehenderit sunt vitae!Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, amet at autem doloremque et, facere illo laudantium, maxime sit tempora vero vitae voluptas? Autem, facilis libero ratione reprehenderit sunt vitae!',
+                    pics: ['https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4aae022482e42c20a8bc0/56d4abe48259b57a201fc909/1456778220299/?format=1000w','https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4aae022482e42c20a8bc0/56d4abe48259b57a201fc909/1456778220299/?format=1000w','https://static1.squarespace.com/static/56d4a125e707eb7a02e4055f/56d4aae022482e42c20a8bc0/56d4abe48259b57a201fc909/1456778220299/?format=1000w']
+                }
             },
         ];
         this.state = {
@@ -55,13 +71,23 @@ class WorkList extends Component {
         });
     }
 
-    goNext(index) {
-        if(index < this.data.length - 1) {
-            this.setState({
-                index: index + 1,
-                data: this.data[index + 1]
-            });
+    goNext(index, dir) {
+        if(dir > 0) {
+            if(index < this.data.length - 1) {
+                this.setState({
+                    index: index + 1,
+                    data: this.data[index + 1]
+                });
+            }
+        }else {
+            if(index > 0) {
+                this.setState({
+                    index: index - 1,
+                    data: this.data[index - 1]
+                });
+            }
         }
+
 
     }
 
@@ -81,6 +107,7 @@ class WorkList extends Component {
             <div>
                 {workDetail}
                 <div className="work-list clearfix">
+
                     {workList}
                 </div>
             </div>
@@ -118,20 +145,44 @@ class WorkDetail extends Component {
     constructor(props) {
         super(props);
         this.back = this.back.bind(this);
-        this.next = this.next.bind(this);
+        this.prev = this.next.bind(this, -1);
+        this.next = this.next.bind(this, 1);
     }
     back() {
         this.props.onBack();
     }
-    next() {
-        this.props.onNext(this.props.index);
+    next(dir) {
+        this.props.onNext(this.props.index, dir);
     }
     render() {
+        const work = this.props.data.info;
+        const picList = work.pics.map((pic, i) =>
+            <div className="pic" key={i}>
+                <img src={pic} alt={pic}/>
+            </div>
+        );
         return (
-            <div className="work-detail">
-                {this.props.data.name}
-                <button onClick={this.back}>back</button>
-                <button onClick={this.next}>next</button>
+            <div>
+                <div className="work-detail clearfix">
+                    <div className="pics">
+                        {picList}
+                    </div>
+                    <div className="text">
+                        <div className="title">{work.title}</div>
+                        <div className="content">
+                            {work.content}
+                        </div>
+                    </div>
+
+                </div>
+                <div className="button-group">
+                    <button className="back" onClick={this.back}>back</button>
+                    <div className="change">
+                        <button onClick={this.prev}>prev</button>
+                        /
+                        <button onClick={this.next}>next</button>
+                    </div>
+                </div>
             </div>
         )
     }

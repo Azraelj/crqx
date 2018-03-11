@@ -28,28 +28,65 @@ class LinkGroup extends Component {
         this.data = [
             {
                 id: 1,
-                name: 'work',
-                url:''
+                name: 'photo',
+                url:'/a'
             },
             {
                 id: 2,
-                name: 'blog',
+                name: 'video',
+                url:'/b'
+            },
+            {
+                id: 3,
+                name: 'installation',
                 url:''
             },
             {
                 id: 3,
-                name: 'about',
+                name: 'book',
                 url:''
             }
         ];
+
+        this.state = {
+            showDropDown: false
+        };
+        this.show = this.show.bind(this);
+        this.hide = this.hide.bind(this);
     }
+
+    show() {
+        this.setState({
+            showDropDown: true
+        });
+    }
+
+    hide() {
+        this.setState({
+            showDropDown: false
+        });
+    }
+
     render() {
-        const list = this.data.map((link) =>
-            <li className="link-item" key={link.id}>{link.name}</li>
-        );
+        let list = null;
+        if(this.state.showDropDown) {
+             list = this.data.map((item) =>
+                <div className="panel-item">
+                    {item.name}
+                </div>
+            );
+        }
+
         return(
             <ul className="link-group">
-                {list}
+                <li className="link-item" onMouseEnter={this.show} onMouseLeave={this.hide}>
+                    work
+                    <div className="panel">
+                        {list}
+                    </div>
+                </li>
+                <li className="link-item">blog</li>
+                <li className="link-item">about</li>
             </ul>
         )
     }
