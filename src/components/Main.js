@@ -8,7 +8,7 @@ class Main extends Component {
         return (
             <div>
                 <Switch>
-                    <Route path="/work" component= {WorkList}/>
+                    <Route exact path="/" component= {WorkList}/>
                     <Route path="/about" component= {About}/>
                 </Switch>
             </div>

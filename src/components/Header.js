@@ -43,7 +43,7 @@ class LinkGroup extends Component {
                 url:''
             },
             {
-                id: 3,
+                id: 4,
                 name: 'book',
                 url:''
             }
@@ -72,7 +72,7 @@ class LinkGroup extends Component {
         let list = null;
         if(this.state.showDropDown) {
              list = this.data.map((item) =>
-                <div className="panel-item">
+                <div className="panel-item" key={item.id}>
                     {item.name}
                 </div>
             );
@@ -81,12 +81,12 @@ class LinkGroup extends Component {
         return(
             <ul className="link-group">
                 <li className="link-item" onMouseEnter={this.show} onMouseLeave={this.hide}>
-                    <Link to="/work">work</Link>
+                    <Link to="/">work</Link>
                     <div className="panel">
                         {list}
                     </div>
                 </li>
-                <li className="link-item"><Link to="">blog</Link></li>
+                <li className="link-item"><Link to="/blog">blog</Link></li>
                 <li className="link-item"><Link to="/about">about</Link></li>
             </ul>
         )
