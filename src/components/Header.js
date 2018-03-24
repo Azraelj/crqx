@@ -1,4 +1,5 @@
 import React, { Component }from 'react'
+import { Link } from 'react-router-dom'
 import '../css/Header.css';
 
 class Header extends Component {
@@ -80,13 +81,13 @@ class LinkGroup extends Component {
         return(
             <ul className="link-group">
                 <li className="link-item" onMouseEnter={this.show} onMouseLeave={this.hide}>
-                    work
+                    <Link to="/work">work</Link>
                     <div className="panel">
                         {list}
                     </div>
                 </li>
-                <li className="link-item">blog</li>
-                <li className="link-item">about</li>
+                <li className="link-item"><Link to="">blog</Link></li>
+                <li className="link-item"><Link to="/about">about</Link></li>
             </ul>
         )
     }
